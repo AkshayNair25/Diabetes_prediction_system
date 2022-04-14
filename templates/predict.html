@@ -1,0 +1,307 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Predict Page</title> 
+</head>
+
+<body>
+    <section id="predict">
+        <header>
+            <ul id="menu">
+                <li><a href="#predict">Predict</a></li>
+                <li><a href="#factsheet">Factsheet</a></li>
+                <li><a href="#parameters">Parameters</a></li>
+            </ul>
+        </header>
+        <div align="center" class="main">
+            <h1>Please Enter the Following Information:</h1>
+            <form action="result">
+                <table>
+                    <tr>
+                        <td align="right">Pregnancies</td>
+                        <td align="left"><input type="text" name="n1" ></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Glucose</td>
+                        <td align="left"><input type="text" name="n2"></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Blood Pressure</td>
+                        <td align="left"><input type="text" name="n3"></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Skin Thickness</td>
+                        <td align="left"><input type="text" name="n4"></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Insulin</td>
+                        <td align="left"><input type="text" name="n5"></td>
+                    </tr>
+                    <tr>
+                        <td align="right">BMI</td>
+                        <td align="left"><input type="text" name="n6"></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Diabetes Pedigree function</td>
+                        <td align="left"><input type="text" name="n7"></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Age</td>
+                        <td align="left"><input type="text" name="n8"></td>
+                    </tr>
+                    <tr>
+                        <td align="center" colspan="2"><input type="submit" class="button"></td>
+                    </tr>
+                    <tr>
+                        <td align="center" colspan="2">Result : {{result2}}</td>
+                    </tr>
+                </table>
+            </form>
+            <table>
+                <tr>
+                    <td>
+                        <form action="analysis">
+                            <input type="submit" value="Maps" class="button">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="Hospitals">
+                            <input type="submit" value="Hospital Info" class="button">
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section id="factsheet">
+        <table id="table" style="background-color: rgba(255, 255, 255, 0.137);">
+            <tr>
+                <th id="th">What To Do</th>
+                <th id="th">What Not To Do</th>
+            </tr>
+            <tr>
+                <td id="td">Keep monitoring sugar level.</td>
+                <td id="td">Avoid processed foods and meats as <br>they will be rich in salt and oil.</td>
+            </tr>
+            <tr>
+                <td id="td">Reduce the intake of carbohydrates.</td>
+                <td id="td">Restrict fried and fatty foods.</td>
+            </tr>
+            <tr>
+                <td id="td">Choose low glycemic index foods.</td>
+                <td id="td">Do not take full fat dairy products.</td>
+            </tr>
+            <tr>
+                <td id="td">Stick to your diet strictly which contains more fiber<br> intakes.<br></td>
+                <td id="td">Alcohol increases blood pressure and triglycerides<br> and heavy drinking weakens the heart.</td>
+            </tr>
+            <tr>
+                <td id="td">Exercise Regularly & Have Proper Hydration.</td>
+                <td id="td">Do not eat white bread, chips, and pastries,<br> which quickly increase blood sugar.</td>
+            </tr>
+            <tr>
+                <td id="td">Try Herbal Extracts such as Green Tea.</td>
+                <td id="td">Do not use artificial sweeteners beyond the<br> recommended quantity.</td>
+            </tr>
+            <tr>
+                <td id="td">Manage Your Stress.</td>
+                <td id="td">Do not eat white bread, chips, and pastries, <br>which quickly increase blood sugar.</td>
+            </tr>
+            <tr>
+                <td id="td">Get Enough Sleep.</td>
+                <td id="td">Do not exercise on empty or full stomach.</td>
+            </tr>
+            <tr>
+                <td id="td">Healthy Weight.</td>
+                <td id="td">Do not smoke & Do not miss your medication.</td>
+            </tr>
+        </table>
+    </section>
+    <section id="parameters">
+        <div align="center" class="main">
+        <ul type="circle">
+            <li><b>Glucose :</b><br>
+            Normal blood sugar levels are less than 100 mg/dL after not eating (fasting) for at
+            least eight hours. And they're less than 140 mg/dL two hours after eating. During
+            the day, levels tend to be at their lowest just before meals.</li><br>
+            <li><b>Blood pressure :</b><br>
+                Ideal blood pressure is considered to be between 90/60mmHg and 120/80mmHg.
+            high blood pressure is considered to be 140/90mmHg or higher. low blood
+            pressure is considered to be 90/60mmHg or lower.</li><br>
+            <li><b>Skin thickness :</b><br>
+            Skin thickness is primarily determined by collagen content and is increased in insulin-dependent diabetes mellitus. We measured skin thickness in 66 IDDM patients aged 24–38 yr and investigated whether
+            it correlated with long-term glycemic control and the presence of certain diabetic complications.</li><br>
+            <li><b>Insulin level :</b><br>
+            1 hour after glucose administration18-276 mIU/L125-1917 pmol/L</li><br>
+            <li><b>BMI :</b><br>
+            A BMI of less than 18.5 means that a person is underweight. A BMI of
+            between 18.5 and 24.9 is ideal. A BMI of between 25 and 29.9 is
+            overweight. A BMI over 30 indicates obesity.</li><br>
+            <li><b>Diabetes pedigree function :</b><br>
+                It utilizes information from a person’s family
+                history to predict how diabetes will affect that individual.</li>
+        </ul>
+    </div>
+    </section>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #predict, #factsheet, #parameters{
+            background-image: url("{% static 'diabetes/images/bottle.jpg' %}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: sans-serif;
+            font-size: large;
+        }
+
+        section,
+        span,
+        ul,
+        li,
+        a,
+        header {
+            box-sizing: border-box;
+        }
+
+        .main {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.137);
+            border-radius: 10px;
+            align-items: center;
+            padding: 5%;
+            color: #ffffff;
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 50px;
+            align-items: center;
+            position: fixed;
+            z-index: 999;
+        }
+
+        #menu li {
+            list-style: none;
+            display: inline-block;
+            margin: 20px;
+        }
+
+        #menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        section {
+            width: 100%;
+            float: left;
+            height: 100vh;
+            position: relative;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        #table{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgb(0, 0, 0);
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        #table, #th, #td{
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        #th, #td{
+            padding: 10px;
+        }
+
+        table, th, td{
+            border: 0px solid black;
+            padding: 10px;
+        }
+        th, td {
+            padding: 10px;
+        }
+        
+
+        .button{
+            position: relative;
+            background-color: #0400ff;
+            border-radius: 4em;
+            font-size: 16px;
+            color: white;
+            padding: 0.8em 1.8em;
+            cursor:pointer;
+            user-select:none;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition-duration: 0.4s;
+            -webkit-transition-duration: 0.4s; /* Safari */
+        }
+
+        .button:hover {
+            transition-duration: 0.1s;
+            background-color: #3A3A3A;
+        }
+
+        .button:after {
+            content: "";
+            display: block;
+            position: absolute;
+            border-radius: 4em;
+            left: 0;
+            top:0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: all 0.5s;
+            box-shadow: 0 0 10px 40px white;
+        }
+
+        .button:active:after {
+            box-shadow: 1 1 1 1 white;
+            position: absolute;
+            border-radius: 4em;
+            left: 0;
+            top:0;
+            opacity: 1;
+            transition: 0s;
+        }
+
+        .button:active {
+            top: 1px;
+        }
+
+    </style>
+</body>
+
+</html>
